@@ -33,7 +33,7 @@ brew install go
 ```
 
 Irrespective of how you install go, make sure you set GOPATH environment variable. I recommend setting GOPATH environment variable inside your home
-directory, in a dedicated sub directory: `/home/user/gospace`. Declare GOPATH in your .bashrc or .bash_profile so that it persist
+directory, in a dedicated sub directory: `/Users/<name>/gospace`. Declare GOPATH in your .bashrc or .bash_profile so that it persist
 between sessions.
 
 ```sh
@@ -65,43 +65,39 @@ Once go and nodejs is setup, you are ready to start with reef-pi code base itsel
 git clone https://github.com/reef-pi/reef-pi.git $GOPATH/src/github.com/reef-pi/reef-pi
 ```
 
-reef-pi project does not use any go package manager yet. A make target is used to get a  bare minimal dependency packages from github.
-All following commands & instructions assume you are working from the reef-pi
-repository itself, i.e.
+reef-pi project does not use any go package manager yet. A make target is used to get bare minimal dependencies from github.
+
+All following commands & instructions assume you are working from the reef-pi repository itself, i.e.
 
 ```
 cd $GOPATH/src/github.com/reef-pi/reef-pi
 ```
 
-- Download dependencies
+- Download go and react dependencies
 
 ```
 make go-get
-```
-
-Install all reef-pi UI or reactjs dependencies
-
-```
 npm install
 ```
 
-This will install reactjs, webpack and ancillary package used by reef-ui
+This will install reactjs, webpack and ancillary package used by reef-pi user interface (front end) code.
 
 - Build reef-pi binary
-Make reef-pi binary
 ```
 make
 ```
-Compile all jsx code to javascript
+
+- Compile all jsx code to javascript
 ```
 ./node_modules/.bin/webpack -d
 ```
 
-Next, start reef-pi in dev_mode (so that all device drivers calls are ignored).
+- Finally, start reef-pi in dev_mode (so that all device drivers calls are ignored).
 
 ```
 DEV_MODE=1 ./bin/reef-pi
 ```
+
 Head over to your browser [http://localhost:8080/](http://localhost:8080) to see the reef-pi in action.
 
 
