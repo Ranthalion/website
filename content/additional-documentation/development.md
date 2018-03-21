@@ -36,7 +36,7 @@ brew install go
 ```
 
 Irrespective of how you install go, make sure you set GOPATH environment variable. I recommend setting GOPATH environment variable inside your home
-directory, in a dedicated sub directory: `/home/ranjib/gospace`. Declare GOPATH in your .bashrc or .bash_profile so that it persist
+directory, in a dedicated sub directory: `/home/user/gospace`. Declare GOPATH in your .bashrc or .bash_profile so that it persist
 between sessions.
 
 ```sh
@@ -65,18 +65,18 @@ Once go and nodejs is setup, you are ready to start with reef-pi code base itsel
 - Copy reef-pi code from github to your $GOPATH
 
 ```
-git clone https://github.com/ranjin/reef-pi.git $GOPATH/src/github.com/ranjib/reef-pi
+git clone https://github.com/reef-pi/reef-pi.git $GOPATH/src/github.com/reef-pi/reef-pi
 ```
 
-To keep reef-pi simple and reliable, I have not yet integrated any go package manager. Hence the example shows cloning reef-pi repository
-inside the $GOPATH, without this go-get command will fail. All following commands & instructions assume you are working from the reef-pi
+reef-pi project does not use any go package manager yet. A make target is used to get a  bare minimal dependency packages from github.
+All following commands & instructions assume you are working from the reef-pi
 repository itself, i.e.
 
 ```
-cd $GOPATH/src/github.com/ranjib/reef-pi
+cd $GOPATH/src/github.com/reef-pi/reef-pi
 ```
 
-- Downnloading dependencies: Now that reef-pi code base is cloned, you can start downloading all the dependencies. To install all go libraries use
+- Download dependencies
 
 ```
 make go-get
