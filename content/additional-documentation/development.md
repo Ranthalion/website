@@ -13,16 +13,13 @@ keywords:
 - coral
 ---
 
-reef-pi is written in [go](https://golang.org/) and [react](https://facebook.github.io/react/). This guide will walk through the steps involved in
-setting up go and nodejs (required for react) development environment, alongside
-reef-pi. This guide assume OSX or Linux as the development platform.
+reef-pi is written in [go](https://golang.org/) and [react](https://facebook.github.io/react/). This guide will walk through the steps involved in setting up go, nodejs and finally reef-pi development environment. This guide assume OSX or Linux as the development platform, but should be useful for other platforms as well.
 
 ### Setup go
 
-reef-pi is built and tested with latest go. At the time of writing the guide, the latest
-version of go is 1.8.1. reef-pi should work with any version of go above 1.5.
+reef-pi is built and tested with latest go. At the time of writing the guide, the latest version of go is 1.10. reef-pi should work with any version of go above 1.8.
 
-Use any one of the three ways to install go:
+Use any one of these three ways to install go:
 
 1. I recommend using the official [go installation guide](https://golang.org/doc/install) to install go in your development machine.
 
@@ -40,7 +37,7 @@ directory, in a dedicated sub directory: `/home/user/gospace`. Declare GOPATH in
 between sessions.
 
 ```sh
-export GOPATH=/home/user/gospace
+export GOPATH=/Users/<name>/gospace
 ```
 
 ### Setup nodejs
